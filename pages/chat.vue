@@ -11,6 +11,7 @@
       >
       </Message>
     </div>
+    <Status class="chat-status"></Status>
     <div class="chat-form">
       <ChatForm></ChatForm>
     </div>
@@ -21,13 +22,15 @@
 import { mapState } from "vuex";
 import Message from "@/components/Message";
 import ChatForm from "../components/ChatForm";
+import Status from "../components/Status";
 export default {
   name: "chat.vue",
   components: {
     Message,
-    ChatForm
+    ChatForm,
+    Status
   },
-  computed: mapState(["user", "messages"]),
+  computed: mapState(["user", "messages", "typers"]),
   middleware: ["chat"],
   watch: {
     messages() {
@@ -59,6 +62,11 @@ export default {
   padding: 1rem;
   height: 80px;
   background: #212121;
+}
+.chat-status {
+  position: absolute;
+  bottom: 65px;
+  padding: 0.5rem;
 }
 
 .chat-chat {

@@ -1,6 +1,6 @@
 <template>
   <v-app app dark>
-    <v-navigation-drawer app v-model="drawer" mobile-break-point="650">
+    <v-navigation-drawer app v-model="drawer" mobile-break-point="500">
       <v-list subheader>
         <v-subheader>Users in the room</v-subheader>
 
@@ -15,8 +15,8 @@
             >
           </v-list-item-icon>
         </v-list-item>
-      </v-list></v-navigation-drawer
-    >
+      </v-list>
+    </v-navigation-drawer>
 
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>

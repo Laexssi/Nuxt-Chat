@@ -6,9 +6,6 @@ class Users {
     this.users.push(user);
   }
 
-  getEveryone() {
-    return this.users;
-  }
   get(id) {
     return this.users.find(user => user.id === id);
   }

@@ -16,6 +16,12 @@ io.on("connection", socket => {
     socket.emit("updateUsers", users.users);
     cb();
   });
+  socket.on("typing", data => {
+    socket.broadcast.to(data.room).emit("addTyper", data);
+  });
+  socket.on("stopTyping", data => {
+    socket.broadcast.to(data.room).emit("deleteTyper", data);
+  });
 
   socket.on("userJoined", (data, cb) => {
     if (!data.name || !data.room) return cb("invalid inputs");

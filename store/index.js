@@ -1,7 +1,8 @@
 export const state = () => ({
   user: {},
   messages: [],
-  users: []
+  users: [],
+  typers: new Set()
 });
 
 export const mutations = {
@@ -18,5 +19,14 @@ export const mutations = {
   },
   SOCKET_updateUsers(state, users) {
     state.users = users;
+  },
+
+  SOCKET_addTyper(state, user) {
+    state.typers = new Set([...state.typers, user.name]);
+  },
+  SOCKET_deleteTyper(state, user) {
+    state.typers = new Set(
+      [...state.typers].filter(name => name !== user.name)
+    );
   }
 };

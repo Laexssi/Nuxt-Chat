@@ -15,8 +15,16 @@ export default {
   name: "ChatForm",
   data() {
     return {
-      text: ""
+      text: "",
+      user: this.$store.state.user
     };
+  },
+  watch: {
+    text: function(val) {
+      val
+        ? this.$socket.emit("typing", this.user)
+        : this.$socket.emit("stopTyping", this.user);
+    }
   },
   methods: {
     send() {
@@ -39,4 +47,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.status {
+  position: absolute;
+  top: -10px;
+  left: 0px;
+}
+</style>

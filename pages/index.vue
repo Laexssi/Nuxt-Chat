@@ -1,7 +1,7 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md6>
-      <v-card min-width="400">
+      <v-card min-width="360">
         <v-snackbar v-model="snackbar" :timeout="6000" bottom>
           {{ messageInfo }}
           <v-btn color="pink" text @click="snackbar = false">
@@ -44,7 +44,7 @@
       </v-card></v-flex
     >
 
-    <v-list flat class="mt-3" min-width="400">
+    <v-list flat class="mt-3" min-width="360">
       <v-subheader>List of active rooms</v-subheader>
       <v-list-item-group color="primary">
         <v-list-item
