@@ -1,6 +1,6 @@
 # vuechat
 
-> My neat Nuxt.js project
+Live demo: https://nuxtchatso.herokuapp.com/
 
 ## Build Setup
 
